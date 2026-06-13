@@ -3,161 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pritesh Singh — DevOps & Platform Engineer. 9+ years across Azure, AWS, Kubernetes, Terraform and CI/CD.">
+  <meta name="description" content="Pritesh Singh — DevOps & Platform Engineer. 9+ years building and automating cloud platforms on Azure, AWS, Kubernetes, Terraform, CI/CD and GitOps.">
   <title>Pritesh Singh — DevOps & Platform Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="aurora" aria-hidden="true"></div>
+  <!-- Boot screen -->
+  <div class="boot" id="boot">
+    <div class="boot-inner">
+      <p class="boot-line"><span class="caret">_</span> Initializing pritesh.sh<span class="dots-anim"></span></p>
+      <div class="boot-bar"><i></i></div>
+    </div>
+  </div>
 
-  <header class="topbar">
-    <a class="brand" href="#">PS<span>.</span></a>
-    <nav class="topnav">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand">pritesh<span>.sh</span></a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#stack">stack</a>
+      <a href="#terminal">terminal</a>
+      <a href="#projects">projects</a>
+      <a href="#pipeline">pipeline</a>
+      <a href="#contact">contact</a>
     </nav>
-    <button class="btn-cv" id="printBtn" type="button">Download CV</button>
+    <a class="hire" href="#contact">HIRE ME</a>
   </header>
 
-  <main class="bento">
-
+  <main>
     <!-- Hero -->
-    <section class="tile hero span-2 row-2 reveal">
-      <canvas class="hero-3d" id="hero3d" aria-hidden="true"></canvas>
-      <div class="hero-content">
-        <span class="status"><i></i> Available for DevOps / Platform roles</span>
-        <h1>Pritesh<br>Singh</h1>
-        <p class="hero-role">DevOps &amp; Platform Engineer</p>
-        <p class="hero-sub">I automate cloud platforms end-to-end — Azure, Kubernetes, Terraform &amp; CI/CD that ship fast and stay up.</p>
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <span class="badge"><i class="led"></i> Open to opportunities · 9+ years experience</span>
+        <p class="hi">Hi, I'm <span class="name">Pritesh Singh</span></p>
+        <h1>Building &amp; Automating<br><span class="grad">Cloud Platforms</span></h1>
+        <p class="hero-sub">DevOps &amp; Platform Engineer focused on CI/CD pipelines, Kubernetes, Infrastructure as Code, and reliable cloud infrastructure on Azure &amp; AWS.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn primary" href="#projects">View Projects</a>
+          <button class="btn ghost" id="cvBtn" type="button">Download CV</button>
           <a class="btn ghost" href="https://www.linkedin.com/in/pritesh-singh-3a781751/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="assets/profile.jpg" alt="Pritesh Singh" onerror="this.style.display='none';this.parentElement.classList.add('mono');">
+          <span class="mono-text">PS</span>
+        </div>
+        <div class="photo-tag"><i class="led"></i> ./pritesh --status=available</div>
+      </div>
+      <a class="explore" href="#about">explore ▾</a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section reveal">
+      <p class="label">// about me</p>
+      <h2>Behind the Terminals</h2>
+      <div class="about-wrap">
+        <p class="about-text">
+          I'm a DevOps &amp; Platform Engineer with 9+ years automating complex cloud workflows,
+          managing scalable infrastructure, and keeping high-traffic platforms reliable. I specialise
+          in Azure-based cloud and data platforms — turning manual, fragile operations into
+          declarative, observable, self-healing systems with Terraform, Azure DevOps, AKS, ArgoCD and GitOps.
+        </p>
+        <ul class="about-status">
+          <li><i class="led"></i> Status: Open to DevOps / Platform roles</li>
+          <li><i class="led"></i> Location: India · Remote-friendly</li>
+          <li><i class="led"></i> Focus: Azure · Kubernetes · IaC · CI/CD</li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div><b>9+</b><span>years</span></div>
+        <div><b>40%</b><span>faster deploys</span></div>
+        <div><b>99.9%</b><span>uptime</span></div>
+        <div><b>80%</b><span>toil automated</span></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <p class="label">// experience</p>
+      <h2>Work History</h2>
+      <p class="sub">9+ years of hands-on DevOps, Cloud &amp; Platform engineering</p>
+      <div class="xp">
+        <article class="xp-item cur reveal">
+          <div class="xp-bar"></div>
+          <div class="xp-body">
+            <div class="xp-top"><h3>Platform Engineer</h3><span class="tagrole">Full-time</span></div>
+            <p class="xp-meta">@ Current Organization · Present</p>
+            <ul>
+              <li><b>▸</b> Driving platform engineering for Azure data platforms using Terraform and GitOps practices.</li>
+              <li><b>▸</b> Building reusable deployment patterns across Azure Data Factory, Databricks, ArgoCD and AKS.</li>
+              <li><b>▸</b> Improving reliability, release velocity and operational visibility for shared cloud services.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="xp-item reveal">
+          <div class="xp-bar"></div>
+          <div class="xp-body">
+            <div class="xp-top"><h3>Senior Associate</h3><span class="tagrole">Full-time</span></div>
+            <p class="xp-meta">@ PwC · 2022 – 2024</p>
+            <ul>
+              <li><b>▸</b> Led Azure DevOps pipelines with Terraform — deployment speed up 40%, errors down 50%.</li>
+              <li><b>▸</b> Built CI/CD for .NET apps with Azure Function Apps — deployment downtime down 30%.</li>
+              <li><b>▸</b> Implemented Azure Monitor, App Insights &amp; Log Analytics — issue resolution time down 45%.</li>
+              <li><b>▸</b> Automated Azure Databricks deployments with Asset Bundles — setup time down 80%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="xp-item reveal">
+          <div class="xp-bar"></div>
+          <div class="xp-body">
+            <div class="xp-top"><h3>Cloud Engineer</h3><span class="tagrole">Full-time</span></div>
+            <p class="xp-meta">@ LTI (Larsen &amp; Toubro Infotech) · 2019 – 2022</p>
+            <ul>
+              <li><b>▸</b> Delivered CI/CD pipelines for Python (Django) &amp; .NET via Azure DevOps — deploy frequency +40%.</li>
+              <li><b>▸</b> Automated testing with Selenium, PowerShell &amp; Python — manual testing time down 70%.</li>
+              <li><b>▸</b> Standardised config with Ansible across Linux/Windows — setup time down 50%.</li>
+              <li><b>▸</b> Migrated HyperV &amp; VMware infrastructure to Azure — 99.9% migration success.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="xp-item reveal">
+          <div class="xp-bar"></div>
+          <div class="xp-body">
+            <div class="xp-top"><h3>Sr. Software Analyst</h3><span class="tagrole">Full-time</span></div>
+            <p class="xp-meta">@ Capgemini · 2017 – 2019</p>
+            <ul>
+              <li><b>▸</b> Managed &amp; configured Windows servers across private and public cloud.</li>
+              <li><b>▸</b> Automated VMware vSphere &amp; Active Directory tasks with PowerShell — effort down 90%.</li>
+              <li><b>▸</b> Built Django dashboards for server resource utilization across vSphere.</li>
+              <li><b>▸</b> Created AWS landing zones using CloudFormation for secure, scalable environments.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certs" class="section">
+      <p class="label">// certifications</p>
+      <h2>Credentials</h2>
+      <p class="sub">Validated cloud &amp; DevOps expertise</p>
+      <div class="cert-grid">
+        <div class="cert reveal"><i class="devicon-kubernetes-plain colored"></i><div><b>CKAD</b><span>Certified Kubernetes Application Developer</span></div></div>
+        <div class="cert reveal"><i class="devicon-azure-plain colored"></i><div><b>AZ-400</b><span>Microsoft DevOps Solutions</span></div></div>
+        <div class="cert reveal"><i class="devicon-terraform-plain colored"></i><div><b>Terraform Associate</b><span>HashiCorp Certified (003)</span></div></div>
+        <div class="cert reveal"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><div><b>AWS SAA</b><span>Solutions Architect — Associate</span></div></div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="section">
+      <p class="label">// the stack</p>
+      <h2>Tools &amp; Technologies</h2>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Azure</span><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>Azure DevOps</span><span>ArgoCD</span><span>Git</span><span>Jenkins</span><span>Python</span><span>PowerShell</span><span>Bash</span><span>Linux</span><span>Azure Monitor</span><span>Grafana</span><span>Databricks</span><span>Azure Data Factory</span>
+          <span>Azure</span><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>Azure DevOps</span><span>ArgoCD</span><span>Git</span><span>Jenkins</span><span>Python</span><span>PowerShell</span><span>Bash</span><span>Linux</span><span>Azure Monitor</span><span>Grafana</span><span>Databricks</span><span>Azure Data Factory</span>
+        </div>
+      </div>
+      <div class="stack-cats">
+        <div class="cat reveal"><h4>Cloud &amp; Infra</h4><div class="chips"><span><i class="devicon-azure-plain colored"></i>Azure</span><span><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span><span><i class="devicon-linux-plain colored"></i>Linux</span></div></div>
+        <div class="cat reveal"><h4>Containers &amp; Orchestration</h4><div class="chips"><span><i class="devicon-docker-plain colored"></i>Docker</span><span><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span><span>AKS</span></div></div>
+        <div class="cat reveal"><h4>IaC &amp; Config</h4><div class="chips"><span><i class="devicon-terraform-plain colored"></i>Terraform</span><span><i class="devicon-ansible-plain colored"></i>Ansible</span></div></div>
+        <div class="cat reveal"><h4>CI/CD &amp; GitOps</h4><div class="chips"><span><i class="devicon-azuredevops-plain colored"></i>Azure DevOps</span><span><i class="devicon-git-plain colored"></i>Git</span><span>ArgoCD</span><span>GitHub Actions</span></div></div>
+        <div class="cat reveal"><h4>Monitoring</h4><div class="chips"><span><i class="devicon-grafana-plain colored"></i>Grafana</span><span>Azure Monitor</span><span>ELK</span></div></div>
+        <div class="cat reveal"><h4>Languages &amp; Data</h4><div class="chips"><span><i class="devicon-python-plain colored"></i>Python</span><span><i class="devicon-bash-plain colored"></i>Shell</span><span>PowerShell</span><span>Databricks</span></div></div>
+      </div>
+    </section>
+
+    <!-- Interactive terminal -->
+    <section id="terminal" class="section">
+      <p class="label">// interactive — try it</p>
+      <h2>Run Some Commands</h2>
+      <p class="sub">Type <code>help</code> and hit enter. (try: about, skills, experience, contact, clear)</p>
+      <div class="term" id="term">
+        <div class="term-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="term-title">pritesh@devops: ~ — bash</span></div>
+        <div class="term-screen" id="termScreen">
+          <div id="termOut"></div>
+          <div class="term-input">
+            <span class="term-prompt">pritesh@devops:~$</span>
+            <span id="termTyped"></span><span class="term-caret">▍</span>
+            <input id="termCmd" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Photo -->
-    <section class="tile photo row-2 reveal">
-      <img src="assets/profile.jpg" alt="Pritesh Singh" id="avatar"
-           onerror="this.style.display='none';document.getElementById('mono').style.display='flex';">
-      <div class="monogram" id="mono">PS</div>
-      <span class="photo-name">Pritesh Singh</span>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <p class="label">// projects</p>
+      <h2>Featured Work</h2>
+      <p class="sub">Production-grade infrastructure &amp; automation. Click <b>flip</b> to see the architecture.</p>
+      <div class="proj-grid" id="projGrid"></div>
     </section>
 
-    <!-- Metrics -->
-    <section class="tile metric reveal"><b>9+</b><span>Years experience</span></section>
-    <section class="tile metric reveal"><b>99.9%</b><span>Platform uptime</span></section>
-
-    <!-- About -->
-    <section id="about" class="tile span-2 reveal">
-      <h2 class="tile-label">// about</h2>
-      <p class="about">
-        DevOps &amp; Platform Engineer specialising in Azure cloud and data platforms.
-        I turn manual, fragile operations into reliable, automated systems with Terraform,
-        Azure DevOps, AKS and GitOps — focused on deployment speed, observability and cutting
-        operational toil.
-      </p>
-    </section>
-
-    <!-- More metrics -->
-    <section class="tile metric reveal"><b>40%</b><span>Faster deploys</span></section>
-    <section class="tile metric reveal"><b>80%</b><span>Toil automated</span></section>
-
-    <!-- Experience -->
-    <section id="experience" class="tile span-2 row-3 reveal">
-      <h2 class="tile-label">// experience</h2>
-      <ol class="xp">
-        <li class="cur">
-          <div class="xp-top"><b>Platform Engineer</b><span class="when">Present</span></div>
-          <p class="org">Current Organization</p>
-          <p class="desc">Platform engineering for Azure data platforms — Terraform &amp; GitOps across ADF, Databricks, ArgoCD and AKS.</p>
-        </li>
-        <li>
-          <div class="xp-top"><b>Senior Associate</b><span class="when">2022 — 2024</span></div>
-          <p class="org">PwC</p>
-          <p class="desc">Azure DevOps + Terraform pipelines (+40% deploy speed); Azure Monitor cut MTTR 45%; Databricks automation -80% setup.</p>
-        </li>
-        <li>
-          <div class="xp-top"><b>Cloud Engineer</b><span class="when">2019 — 2022</span></div>
-          <p class="org">LTI</p>
-          <p class="desc">CI/CD for Python/.NET; automation with Ansible/Selenium (-70% manual testing); HyperV/VMware → Azure at 99.9% success.</p>
-        </li>
-        <li>
-          <div class="xp-top"><b>Sr. Software Analyst</b><span class="when">2017 — 2019</span></div>
-          <p class="org">Capgemini</p>
-          <p class="desc">Automated VMware &amp; Active Directory with PowerShell (-90% effort); AWS landing zones via CloudFormation.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="tile span-2 row-2 reveal">
-      <h2 class="tile-label">// stack</h2>
-      <div class="stack">
-        <span><i class="devicon-azure-plain colored"></i>Azure</span>
-        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
-        <span><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
-        <span><i class="devicon-docker-plain colored"></i>Docker</span>
-        <span><i class="devicon-terraform-plain colored"></i>Terraform</span>
-        <span><i class="devicon-ansible-plain colored"></i>Ansible</span>
-        <span><i class="devicon-azuredevops-plain colored"></i>Azure DevOps</span>
-        <span><i class="devicon-git-plain colored"></i>GitOps</span>
-        <span><i class="devicon-python-plain colored"></i>Python</span>
-        <span><i class="devicon-bash-plain colored"></i>Shell</span>
-        <span><i class="devicon-linux-plain colored"></i>Linux</span>
-        <span><i class="devicon-grafana-plain colored"></i>Monitoring</span>
+    <!-- Pipeline / meta -->
+    <section id="pipeline" class="section">
+      <p class="label">// meta-project</p>
+      <h2>How This Site Ships</h2>
+      <p class="sub">This portfolio is itself a DevOps project — version-controlled and deployed via CI/CD to GitHub Pages.</p>
+      <div class="pipe">
+        <div class="pstep reveal"><span class="pn">01</span><b>Git Push</b><small>push to main</small></div>
+        <div class="pconn"></div>
+        <div class="pstep reveal"><span class="pn">02</span><b>Lint</b><small>HTML/CSS/JS checks</small></div>
+        <div class="pconn"></div>
+        <div class="pstep reveal"><span class="pn">03</span><b>Build</b><small>static assets</small></div>
+        <div class="pconn"></div>
+        <div class="pstep reveal"><span class="pn">04</span><b>Deploy</b><small>GitHub Pages</small></div>
+        <div class="pconn"></div>
+        <div class="pstep reveal live"><span class="pn">05</span><b>Health Check</b><small>site is 100% UP</small></div>
       </div>
-    </section>
+      <div class="yaml reveal">
+        <div class="yaml-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="term-title">.github/workflows/deploy.yml</span></div>
+<pre><code><span class="k">name</span>: 🚀 Deploy Portfolio
 
-    <!-- Location -->
-    <section class="tile reveal soft">
-      <h2 class="tile-label">// based in</h2>
-      <p class="big-line">📍 India</p>
-      <p class="muted">Open to remote &amp; relocation</p>
-    </section>
+<span class="k">on</span>:
+  <span class="k">push</span>:
+    <span class="k">branches</span>: [main]
 
-    <!-- Now -->
-    <section class="tile reveal soft">
-      <h2 class="tile-label">// now</h2>
-      <p class="big-line">⎈ Shipping platforms</p>
-      <p class="muted">Azure · AKS · ArgoCD · Terraform</p>
-    </section>
-
-    <!-- Certifications -->
-    <section class="tile span-2 reveal">
-      <h2 class="tile-label">// certifications</h2>
-      <div class="certs">
-        <span><i class="devicon-kubernetes-plain colored"></i> CKAD</span>
-        <span><i class="devicon-azure-plain colored"></i> AZ-400</span>
-        <span><i class="devicon-terraform-plain colored"></i> Terraform Associate</span>
-        <span><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS SAA</span>
+<span class="k">jobs</span>:
+  <span class="k">deploy</span>:
+    <span class="k">runs-on</span>: ubuntu-latest
+    <span class="k">steps</span>:
+      - <span class="k">uses</span>: actions/checkout@v4
+      - <span class="k">uses</span>: actions/configure-pages@v5
+      - <span class="k">uses</span>: actions/upload-pages-artifact@v3
+        <span class="k">with</span>: { path: <span class="s">"."</span> }
+      - <span class="k">uses</span>: actions/deploy-pages@v4
+      - <span class="k">name</span>: 🏥 Health Check
+        <span class="k">run</span>: curl -f https://priteshksr.github.io/pritesh-portfolio/</code></pre>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="tile span-4 contact reveal">
-      <div>
-        <h2 class="tile-label">// contact</h2>
-        <p class="contact-lead">Let’s build reliable platforms together.</p>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:priteshksingh001@gmail.com">✉️ priteshksingh001@gmail.com</a>
-        <a href="tel:+918078688376">📞 +91 8078688376</a>
-        <a href="https://www.linkedin.com/in/pritesh-singh-3a781751/" target="_blank" rel="noreferrer">in / LinkedIn ↗</a>
+    <section id="contact" class="section">
+      <p class="label">// contact</p>
+      <h2>Let's Build Something</h2>
+      <p class="sub">Open to DevOps / Platform / Cloud Engineering roles. Always happy to talk infrastructure.</p>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <a href="mailto:priteshksingh001@gmail.com"><i class="led"></i> priteshksingh001@gmail.com</a>
+          <a href="tel:+918078688376"><i class="led"></i> +91 8078688376</a>
+          <a href="https://www.linkedin.com/in/pritesh-singh-3a781751/" target="_blank" rel="noreferrer"><i class="led"></i> linkedin.com/in/pritesh-singh</a>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Name<input type="text" id="cName" required></label>
+          <label>Email<input type="email" id="cEmail" required></label>
+          <label>Message<textarea id="cMsg" rows="4" maxlength="2000" required></textarea></label>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
-
   </main>
 
-  <footer class="foot">© <span id="year"></span> Pritesh Singh — DevOps &amp; Platform Engineer</footer>
+  <footer class="foot">
+    <p>pritesh.sh · © <span id="year"></span> Pritesh Singh — DevOps &amp; Platform Engineer</p>
+    <p class="meta">Crafted with HTML5, CSS &amp; Vanilla JS · statically hosted on GitHub Pages · release: 1.0.0</p>
+  </footer>
 
   <script src="script.js"></script>
-  <script type="module" src="three-hero.js"></script>
 </body>
 </html>
