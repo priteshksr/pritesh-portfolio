@@ -189,6 +189,11 @@ code { font-family: var(--mono); }
 .pf { font-size: 0.78rem; margin: 0.2rem 0 0; }
 .pf b { color: var(--amber); font-family: var(--mono); }
 .pf.fix b { color: var(--green); }
+.proj-links { display: flex; gap: 0.45rem; margin-top: 0.8rem; flex-wrap: wrap; }
+.plink { font-family: var(--mono); font-size: 0.72rem; color: var(--green); border: 1px solid var(--line-2); border-radius: 8px; padding: 0.3rem 0.6rem; transition: background .15s ease, color .15s ease; }
+.plink:hover { background: var(--green); color: var(--bg); }
+.plink.todo { color: var(--muted); border-style: dashed; border-color: var(--line); cursor: help; }
+.plink.todo:hover { background: transparent; color: var(--amber); border-color: var(--amber); }
 
 /* ── Pipeline ── */
 .pipe { display: flex; align-items: stretch; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem; margin-bottom: 1.4rem; }

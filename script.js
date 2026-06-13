@@ -22,6 +22,8 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 window.addEventListener("load", () => setTimeout(() => document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in")), 1800));
 
 // ── Projects (data → flip cards) ──
+// 👉 TO ADD YOUR LINKS: edit the `links` object on each project below.
+//    Set code/live/blog to your URLs. Leave "" to hide that button.
 const PROJECTS = [
   {
     title: "Azure DevOps + Terraform Platform",
@@ -35,6 +37,7 @@ const PROJECTS = [
     ],
     problem: "Manual, inconsistent Azure provisioning caused config drift and slow, error-prone releases.",
     fix: "Built a Terraform + Azure DevOps IaC pipeline — deploy speed up 40%, deployment errors down 50%.",
+    links: { code: "", live: "", blog: "" },
   },
   {
     title: "GitOps Delivery onto AKS (ArgoCD)",
@@ -48,6 +51,7 @@ const PROJECTS = [
     ],
     problem: "Imperative deployments to Kubernetes were hard to audit and recover.",
     fix: "Adopted ArgoCD GitOps — self-healing, auditable rollouts integrated with the AKS + Azure DevOps flow.",
+    links: { code: "", live: "", blog: "" },
   },
   {
     title: "Databricks Asset Bundle Automation",
@@ -61,6 +65,7 @@ const PROJECTS = [
     ],
     problem: "Manual Databricks setup was slow and inconsistent across environments.",
     fix: "Automated with Asset Bundles — setup time reduced by over 80% with repeatable promotion.",
+    links: { code: "", live: "", blog: "" },
   },
   {
     title: "CI/CD for .NET + Azure Function Apps",
@@ -74,6 +79,7 @@ const PROJECTS = [
     ],
     problem: "Manual .NET releases caused downtime and infrequent deployments.",
     fix: "Built CI/CD with Function Apps + APIM — downtime down 30%, release frequency up 25%.",
+    links: { code: "", live: "", blog: "" },
   },
   {
     title: "VMware / HyperV → Azure Migration",
@@ -87,6 +93,7 @@ const PROJECTS = [
     ],
     problem: "Manual migrations risked errors and downtime at scale.",
     fix: "Automated validation + monitoring — 99.9% migration success, errors down 40%.",
+    links: { code: "", live: "", blog: "" },
   },
   {
     title: "Observability: Azure Monitor + ELK",
@@ -100,11 +107,35 @@ const PROJECTS = [
     ],
     problem: "Slow incident diagnosis from fragmented logs and metrics.",
     fix: "Implemented Azure Monitor, App Insights & Log Analytics — issue resolution time down 45%.",
+    links: { code: "", live: "", blog: "" },
   },
 ];
 
 const grid = document.getElementById("projGrid");
 if (grid) {
+  const linkBtn = (href, label, icon, todo) => {
+    const cls = todo ? "plink todo" : "plink";
+    const safeHref = todo ? "#" : href;
+    const rel = href && href.startsWith("http") ? ' target="_blank" rel="noreferrer"' : "";
+    const title = todo ? ' title="Add your link in script.js (PROJECTS → links)"' : "";
+    return `<a class="${cls}" href="${safeHref}"${rel}${title}>${icon} ${label}</a>`;
+  };
+
+  const renderLinks = (links = {}) => {
+    const items = [
+      ["code", "Code", "▸"],
+      ["live", "Live", "◉"],
+      ["blog", "Blog", "✎"],
+    ];
+    const html = items
+      .map(([key, label, icon]) => {
+        const url = (links[key] || "").trim();
+        return linkBtn(url, label, icon, !url);
+      })
+      .join("");
+    return `<div class="proj-links">${html}</div>`;
+  };
+
   PROJECTS.forEach((p) => {
     const card = document.createElement("div");
     card.className = "flip reveal";
@@ -122,10 +153,18 @@ if (grid) {
           <ul class="arch">${p.arch.map((a) => `<li>${a}</li>`).join("")}</ul>
           <p class="pf"><b>Problem:</b> ${p.problem}</p>
           <p class="pf fix"><b>Fix:</b> ${p.fix}</p>
+          ${renderLinks(p.links)}
         </div>
       </div>`;
     card.querySelectorAll(".proj-zoom").forEach((btn) =>
       btn.addEventListener("click", (e) => { e.stopPropagation(); card.classList.toggle("flipped"); })
+    );
+    // don't flip the card when clicking a real link
+    card.querySelectorAll(".proj-links a").forEach((a) =>
+      a.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (a.classList.contains("todo")) e.preventDefault();
+      })
     );
     grid.appendChild(card);
     io.observe(card);
