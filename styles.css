@@ -95,6 +95,10 @@ body {
 
 /* Hero */
 .hero { display: flex; flex-direction: column; justify-content: center; background: linear-gradient(150deg, #14101f, #0c0e16 70%); }
+.hero-3d { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.9; pointer-events: none; }
+.hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(120deg, rgba(12,14,22,0.82) 0%, rgba(12,14,22,0.45) 45%, rgba(12,14,22,0.12) 100%); }
 .status {
   display: inline-flex; align-items: center; gap: 0.5rem; align-self: flex-start;
   font-size: 0.78rem; font-weight: 600; color: #34d399;

@@ -29,13 +29,16 @@
 
     <!-- Hero -->
     <section class="tile hero span-2 row-2 reveal">
-      <span class="status"><i></i> Available for DevOps / Platform roles</span>
-      <h1>Pritesh<br>Singh</h1>
-      <p class="hero-role">DevOps &amp; Platform Engineer</p>
-      <p class="hero-sub">I automate cloud platforms end-to-end — Azure, Kubernetes, Terraform &amp; CI/CD that ship fast and stay up.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/pritesh-singh-3a781751/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <canvas class="hero-3d" id="hero3d" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <span class="status"><i></i> Available for DevOps / Platform roles</span>
+        <h1>Pritesh<br>Singh</h1>
+        <p class="hero-role">DevOps &amp; Platform Engineer</p>
+        <p class="hero-sub">I automate cloud platforms end-to-end — Azure, Kubernetes, Terraform &amp; CI/CD that ship fast and stay up.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/pritesh-singh-3a781751/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
       </div>
     </section>
 
@@ -155,5 +158,6 @@
   <footer class="foot">© <span id="year"></span> Pritesh Singh — DevOps &amp; Platform Engineer</footer>
 
   <script src="script.js"></script>
+  <script type="module" src="three-hero.js"></script>
 </body>
 </html>
