@@ -1,25 +1,30 @@
-# Pritesh Portfolio (GitHub Pages)
+# Pritesh Singh — Portfolio (GitHub Pages)
 
-This is a static GitHub Pages-ready portfolio site.
+Static, GitHub Pages-ready portfolio. No build step.
+
+## Versions
+
+| Path | Audience | Description |
+|------|----------|-------------|
+| `/` (root) | **Recruiters / HR** | Clean, professional, everything visible by scrolling. One-click contact + Download CV. |
+| `/v3-interactive/` | Engineers | A real interactive terminal — type commands to explore. |
+| `/v2-k8s/` | Engineers | Animated Kubernetes cluster-map theme. |
+| `/backup-v1-terminal/` | Backup | Original terminal-styled static page. |
 
 ## Run locally
-
-Open `index.html` directly in browser, or use any static server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.
 
-## Deploy to GitHub Pages
+## Download CV
 
-1. Create a new GitHub repository (for example: `pritesh-portfolio`).
-2. Push all files from this folder.
-3. Go to **Settings -> Pages**.
-4. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main** and **/root**
-5. Save. Your site will be live in 1-2 minutes.
+The root site’s **Download CV** button uses the browser’s print-to-PDF with a
+print-optimized stylesheet, so recruiters get a clean one-page PDF instantly.
 
-If this is a user/organization site, name the repo `<username>.github.io` to host it at root.
+## Deploy (GitHub Pages)
+
+Settings → Pages → Deploy from branch → `main` → `/root`.
+Live at: https://priteshksr.github.io/pritesh-portfolio/
