@@ -1,15 +1,11 @@
 # Pritesh Singh — Portfolio (GitHub Pages)
 
-Static, GitHub Pages-ready portfolio. No build step.
+A modern **bento-grid** portfolio. Static, no build step.
 
-## Versions
+## Add your photo
 
-| Path | Audience | Description |
-|------|----------|-------------|
-| `/` (root) | **Recruiters / HR** | Clean, professional, everything visible by scrolling. One-click contact + Download CV. |
-| `/v3-interactive/` | Engineers | A real interactive terminal — type commands to explore. |
-| `/v2-k8s/` | Engineers | Animated Kubernetes cluster-map theme. |
-| `/backup-v1-terminal/` | Backup | Original terminal-styled static page. |
+Drop a square image at `assets/profile.jpg` (≈600×600px).
+Until then, the photo tile shows a "PS" monogram automatically.
 
 ## Run locally
 
@@ -21,10 +17,10 @@ Open `http://localhost:8080`.
 
 ## Download CV
 
-The root site’s **Download CV** button uses the browser’s print-to-PDF with a
-print-optimized stylesheet, so recruiters get a clean one-page PDF instantly.
+The **Download CV** button uses browser print-to-PDF with a print-optimized
+stylesheet, producing a clean recruiter-ready PDF.
 
 ## Deploy (GitHub Pages)
 
 Settings → Pages → Deploy from branch → `main` → `/root`.
-Live at: https://priteshksr.github.io/pritesh-portfolio/
+Live: https://priteshksr.github.io/pritesh-portfolio/
